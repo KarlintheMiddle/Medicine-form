@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base target="_top" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- <?!= include('JavaScript'); ?> -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <form id="myForm" onsubmit="handleFormSubmit(this)">
+            <p class="h4 mb-4 text-center">Medicine Inventory</p>
+
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date" class="form-control" placeholder="Date" />
+              </div>
+
+              <div class="form-group col-md-9">
+                <label for="barangay">Barangay</label>
+                <input type="text" name="barangay" id="barangay" class="form-control" placeholder="Barangay" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="medicine">Medicine</label>
+              <input type="text" class="form-control" id="medicine" name="medicine" placeholder="Medicine" />
+            </div>
+
+            <div class="form-group">
+              <label for="batch">Batch</label>
+              <input type="text" class="form-control" id="batch" name="batch" placeholder="Batch" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="receive">Receive</label>
+                <input type="number" name="receive" id="receive" class="form-control" placeholder="Receive" />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="out">Out</label>
+                <input type="number" name="out" id="out" class="form-control" placeholder="Out" />
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
