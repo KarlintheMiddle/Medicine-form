@@ -8,6 +8,8 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <?!= include('JavaScript'); ?> -->
   </head>
   <body>
@@ -30,29 +32,85 @@
             </div>
 
             <div class="form-group">
-              <label for="medicine">Medicine</label>
-              <input type="text" class="form-control" id="medicine" name="medicine" placeholder="Medicine" />
-            </div>
-
-            <div class="form-group">
               <label for="batch">Batch</label>
               <input type="text" class="form-control" id="batch" name="batch" placeholder="Batch" />
             </div>
 
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="receive">Receive</label>
-                <input type="number" name="receive" id="receive" class="form-control" placeholder="Receive" />
+            <div class="container1">
+              <div class="container2" id="container2">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="medicine">Medicine</label>
+                    <input type="text" class="form-control" id="medicine" name="medicine" placeholder="Medicine" />
+                  </div>
+                  
+                  <div class="form-group col-md-2">
+                    <label for="receive">Receive</label>
+                    <input type="number" name="receive" id="receive" class="form-control" placeholder="Receive" />
+                  </div>
+
+                  <div class="form-group col-md-2">
+                    <label for="out">Out</label>
+                    <input type="number" name="out" id="out" class="form-control" placeholder="Out" />
+                  </div>
+                </div>
               </div>
 
-              <div class="form-group col-md-6">
-                <label for="out">Out</label>
-                <input type="number" name="out" id="out" class="form-control" placeholder="Out" />
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                <button type="submit" class="btn btn-success add_form_field">New Medicine &nbsp; 
+                  <span style="font-size:16px; font-weight:bold;">+ </span>
+                </button>
+              
             </div>
+            
+
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          
           </form>
+          <script>
+           
+
+
+
+            $(document).ready(function() {
+
+             
+            var max_fields = 10;
+            var wrapper = $(".container2");
+            var add_button = $(".add_form_field");
+            const collection = document.getElementById("container2")
+
+            var x = 1;
+            $(add_button).click(function(e) {
+                e.preventDefault();
+                if (x < max_fields) {
+                    x++;
+                    $(wrapper).append(
+                `<div class="form-row">
+                  <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="medicine${x}" name="medicine" placeholder="Medicine" />
+                  </div>
+                  
+                  <div class="form-group col-md-2">
+                    <input type="number" name="receive" id="receive${x}" class="form-control" placeholder="Receive" />
+                  </div>
+                  <div class="form-group col-md-2">
+                    <input type="number" name="out" id="out${x}" class="form-control" placeholder="Out" />
+                  </div>
+                </div>`
+                ); //add input box
+                   
+                } else {
+                    alert('You Reached the limits')
+                }
+            });
+
+            $(wrapper).on("click", ".delete", function(e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            })
+        });
+          </script>
         </div>
       </div>
     </div>
