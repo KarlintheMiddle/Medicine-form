@@ -1,0 +1,32 @@
+<script>
+    // Prevent forms from submitting.
+    function preventFormSubmit() {
+      var forms = document.querySelectorAll('form');
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].addEventListener('submit', function(event) {
+        event.preventDefault();
+        });
+      }
+    }
+    window.addEventListener('load', preventFormSubmit);    
+        
+    function handleFormSubmit() {
+      
+      //Get the data in form 
+      const data = new FormData(event.target);
+  
+      //Convert data to object;
+      const value = Object.fromEntries(data.entries());
+      //convert Object to array for appendRow
+      const arrayData = Object.values(value);
+      console.log(arrayData);
+      
+      //Run processForm class from Code.gs
+      google.script.run.processForm(arrayData);
+      document.getElementById("myForm").reset();
+      
+    }
+  
+    const form = document.querySelector('form');
+    form.addEventListener('submit', handleFormSubmit);
+  </script>
