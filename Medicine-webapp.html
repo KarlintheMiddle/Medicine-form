@@ -21,46 +21,209 @@
       }
     </style>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="//rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.css" rel="stylesheet">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <!-- <?!= include('JavaScript'); ?> -->
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <form id="myForm" onsubmit="handleFormSubmit(this)">
+          <form id="myForm" onsubmit="handleFormSubmit()">
             <p class="h4 mb-4 text-center">Medicine Inventory</p>
 
+            <!-- DATE AND BATCH -->
             <div class="form-row">
-              <div class="form-group col-md-3">
+              <!-- DATA -->
+              <div class="form-group col-md-6">
                 <label for="date">Date</label>
                 <input type="date" name="date" id="date" class="form-control" placeholder="Date" />
               </div>
-
-              <div class="form-group col-md-9">
-                <label for="barangay">Barangay</label>
-                <input type="text" name="barangay" id="barangay" class="form-control" placeholder="Barangay" />
+              <!-- BATCH -->
+              <div class="form-group col-md-6">
+              <label for="batch">Batch</label>
+              <select class="form-select" id="batch" name="batch">
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+              </select>
               </div>
             </div>
 
+            <!-- BARANGAY -->
             <div class="form-group">
-              <label for="batch">Batch</label>
-              <input type="text" class="form-control" id="batch" name="batch" placeholder="Batch" />
+              <label for="barangay">Barangay</label>
+                <select name="barangay" id="barangay" class="form-select" >
+                
+                  <Option value="Almanza 1">Almanza 1</Option>
+                  <Option value="Balagtas">Balagtas</Option>
+                  <Option value="Basa">Basa</Option>
+                  <Option value="Bernabe">Bernabe</Option>
+                  <Option value="BF Carnival">BF Carnival</Option>
+                  <Option value="Caa-A">Caa-A</Option>
+                  <Option value="Caa-B">Caa-B</Option>
+                  <Option value="Caa-C">Caa-C</Option>
+                  <Option value="Caa-D">Caa-D</Option>
+                  <Option value="Daniel Fajardo">Daniel Fajardo</Option>
+                  <Option value="Elias Aldana">Elias Aldana</Option>
+                  <Option value="Gatchalian">Gatchalian</Option>
+                  <Option value="Golden Acres">Golden Acres</Option>
+                  <Option value="Ilaya">Ilaya</Option>
+                  <Option value="Manuyo 1">Manuyo 1</Option>
+                  <Option value="Pamplona 1">Pamplona 1</Option>
+                  <Option value="Pamplona 2">Pamplona 2</Option>
+                  <Option value="Pamplona 3">Pamplona 3</Option>
+                  <Option value="Pilar">Pilar</Option>
+                  <Option value="Pugad Lawin">Pugad Lawin</Option>
+                  <Option value="Pulang Lupa 1">Pulang Lupa 1</Option>
+                  <Option value="Pulang Lupa 2">Pulang Lupa 2</Option>
+                  <Option value="Talon 1">Talon 1</Option>
+                  <Option value="Talon 2">Talon 2</Option>
+                  <Option value="Talon 3">Talon 3</Option>
+                  <Option value="Talon 4">Talon 4</Option>
+                  <Option value="Talon 5">Talon 5</Option>
+                  <Option value="TS Cruz">TS Cruz</Option>
+                  <Option value="Urbanville">Urbanville</Option>
+                  <Option value="Zapote">Zapote</Option>
+              </select>
             </div>
 
+            <!-- MEDICINE AND TRANSACTIONS -->
             <div class="container1 medform">
               <div class="container2" id="container2">
                 <div class="form-row">
+                  <!-- MEDICINE -->
                   <div class="form-group col-md-6">
                     <label for="medicine">Medicine</label>
-                    <input type="text" class="form-control" id="medicine" name="medicine" placeholder="Medicine" />
+                    <select class="form-select" id="medicine" name="medicine">
+                      <option>Amoxicillin 100mg 10ml drops</option>
+                      <option>Amoxicillin 125mg/5ml.susp.60ml.</option>
+                      <option>Amoxicillin 250mg. Cap. 100's</option>
+                      <option>Amoxicillin 250mg/5ml.susp.60 ml.</option>
+                      <option>Amoxicillin 500mg. Cap. 100's</option>
+                      <option>Calcium Ascorbate 500mg cap100's</option>
+                      <option>Captopril 25mg tab. 100's</option>
+                      <option>Cefalexin 100mg.10ml.drops</option>
+                      <option>Cefalexin 125mg,susp.60ml.</option>
+                      <option>Cefalexin cap.500mg.100's</option>
+                      <option>Ceterizine 5mg / 5ml syrup 60ml</option>
+                      <option>Ceterizine10mg. Tab 100's</option>
+                      <option>Chlorpeniramine 4mg tab. 100's</option>
+                      <option>Chlorpeniramine maleate 2mg / 5ml 60ml syrup</option>
+                      <option>Cimetidine 200 mg 100's</option>
+                      <option>Ciprofloxacin 500mg tab.100's</option>
+                      <option>Cloxacillin 125mg susp.60ml</option>
+                      <option>Cloxacillin 250mg 60 ml susp.</option>
+                      <option>Cloxacillin cap.500mg.,100s</option>
+                      <option>Cotrimoxazole 200mg/40mg susp.60ml</option>
+                      <option>Cotrimoxazole 400mg/80mg. Cap.100's</option>
+                      <option>Doxycycline 100mg cap.100's</option>
+                      <option>Erytrhromycin 500mg cap.100's -</option>
+                      <option>Erytrhromycin 500mg cap.100's</option>
+                      <option>Felodipine 5mg tab.100's</option>
+                      <option>Ferrous Sulfate + Folic Acid 200mg /400mg tab 100's</option>
+                      <option>Glibenclamide 5mg tab.100's</option>
+                      <option>Glibenclamide 5mg tab.100's -</option>
+                      <option>Ibuprofen 200mg tab. 100's</option>
+                      <option>Lagundi 300mg tab.100's</option>
+                      <option>Lagundi 300mg tab.100's -</option>
+                      <option>Lagundi 300mg, 60ml syrup</option>
+                      <option>Mefenamic 500mg cap.100s</option>
+                      <option>Mefanamic 50mg/5ml 60ml susp.</option>
+                      <option>Metoprolol 50mg tab. 100's</option>
+                      <option>Paracetamol 100mg 10ml. Drops</option>
+                      <option>Paracetamol 250mg 60ml syrup</option>
+                      <option>Paracetamol 500mg. Tab. 100's.</option>
+                      <option>Paracetamol 120mg/5ml.sy..60ml.</option>
+                      <option>Salbutamol 2mg/5ml syrup 60ml</option>
+                      <option>Salbutamol nebule solution 1mg /ml 30's</option>
+                      <option>Sambong Forte 250mg tab.100's</option>
+                      <option>Simvastatin 20mg. Tab. 100's</option>
+                      <option>Sodium Ascorbate 250mg/5ml syrup 120ml</option>
+                      <option>Sodium Ascorbate 500mg Cap.100's</option>
+                      <option>Sodium Ascorbate Drops. 100mg/ml 30ml</option>
+                      <option>Trimetazidine 35mg tab.30's</option>
+                      <option>Vit.+ Mineral w/ Ginseng Cap. 100's</option>
+                      <option>Vit. B Complex with Iron Cap. 100's</option>
+                      <option>Vit. B Complex (B1B6B12) Tab. 100's</option>
+                      <option>Vitamins + Lysine, CGF & Taurine sy. 60ml</option>
+                      <option>Tetanus Toxoid ( Tetox )</option>
+                      <option>Methyldopa 250mg tab. 100's</option>
+                      <option>Rifampicin 450mg cap. 100's</option>
+                      <option>Isoniazid 300mg tab.100's</option>
+                      <option>LOSARTAN 50mg Tab. 100's</option>
+                      <option>Isoniazid Syrup 100mg / 5ml, 120ml</option>
+                      <option>Rifampicin 200mg / 5ml Susp. 120ml</option>
+                      <option>DMPA</option>
+                      <option>TRUST PILLS (ETHINYL ESTRADIOL LEVONOGESTREL FERROUS FUMARATE)</option>
+                      <option>POP Progestine Only Pill</option>
+                      <option>Metformin 500 mg Tab. 100's</option>
+                      <option>Omeprazole 20mg. Cap 100's</option>
+                      <option>Salbutamol 2mg Tab. 100's</option>
+                      <option>Amlodipine 5mg Tab. 100's</option>
+                      <option>Clonidine HCL. 75mcg. Tab. 100's - Clodin</option>
+                      <option>Amlodipine 5mg tab. 100's -</option>
+                      <option>Amoxicillin 500mg cap 100's -</option>
+                      <option>Calcuim Ascorbate 500mg cap. 100's -</option>
+                      <option>Cefalexin 500mg cap. 100's -</option>
+                      <option>Cefuroxime 500mg cap. 10's</option>
+                      <option>Levofloxacin 500mg tab. 30's</option>
+                      <option>Losartan 50mg tab. 100's -</option>
+                      <option>Mefanamic acid 500 mg cap. 100's</option>
+                      <option>Metoprolol 50mg tab. 100's -</option>
+                      <option>Simvastatin 20mg tab. 100's -</option>
+                      <option>Implanon (Estenogestrel Implanon 68 mg Implant )</option>
+                      <option>Levofloxacin 500mg tab. 30's -</option>
+                      <option>ORS x25's.</option>
+                      <option>Salbutamol 2mg/5ml syrup 60ml -</option>
+                      <option>Sodium Ascorbate 500mg Cap.100's -</option>
+                      <option>Trimetazidine 35mg tab.30's -</option>
+                      <option>LOSARTAN 50mg Tab. 100's -</option>
+                      <option>Metformin 500 mg Tab. 100's -</option>
+                      <option>Aspirin 80mg tab. 100's -</option>
+                      <option>Montelukast 10mg tab. 100's -</option>
+                      <option>Prednisone 10mg tab. 100's (Vonwelt )</option>
+                      <option>Clonidine HCL. 75mcg. Tab. 100's - ( Catamed ) -</option>
+                      <option>Isosorbide Dinatrate 10 mg tab. 100's</option>
+                      <option>Azithromycin 500mg tab. 3's</option>
+                      <option>Cefuroxime 500mg cap. 10's -</option>
+                      <option>Mefenamic 500mg cap.100s -</option>
+                      <option>Sodium Ascorbate 500mg cap. 100's ( ALKA C )</option>
+                      <option>Ciprofloxacin 500mg tab.100's -</option>
+                      <option>Levofloxacin 500mg tab. 100's</option>
+                      <option>Clonidine HCL 75mcg tab. 100's -</option>
+                      <option>Prednisone 10mg tab. 100's</option>
+                      <option>Aspirin 80mg tab. 100's</option>
+                      <option>Montelukast 10mg tab. 100's</option>
+                      <option>Cefuroxime 500mg cap. 10's</option>
+                      <option>Azithromycin 500mg tab. 6's</option>
+                      <option>Losartan 500mg tab 100's -</option>
+                      <option>Lagundi 300mg tab. 100's ( ofplemed )</option>
+                      <option>Lagundi 300 60ml syrup -</option>
+                      <option>Ceterizine 10mg tab. 100's ( Medrizine )</option>
+                      <option>Glibenclamide 5mg tab.100's ( Glimide )</option>
+                      <option>Paracetamol 125mg/5ml syrup 60ml (Alagesic )</option>
+                      <option>Paracetamol 500mg tab. 100's ( Philpara )</option>
+                      <option>Captopril 25mg tab. 100's ( Captobes )</option>
+                      <option>Felodipine 5mg tab.100's ( Felostal )</option>
+                      <option>Amlodipine 5mg Tab. 100's (Norvatrol )</option>
+                      <option>Sodium Ascorbate w/ zinc. 109.68mg/6.5mg 5ml,120ml ( Kiddy-Plus C )</option>
+                      <option>Trimetazidine 35mg tab.30's ( Trimezar )</option>
+                      <option>Vit.+ Lysine, CGF & Taurine syrup 60ml ( Calorevit syrup. )</option>
+                      <option>Cefalexin 100mg/ ml powder susp. (diacef )</option>
+                      <option>Azithromycin 500mg tab. 6's (Azo )</option>
+                    </select> 
                   </div>
-
+                  <!-- RECEIVE -->
                   <div class="form-group col-md-2">
                     <label for="receive">Receive</label>
                     <input type="number" name="receive" id="receive" class="form-control" placeholder="Receive" />
                   </div>
-
+                  <!-- OUT -->
                   <div class="form-group col-md-2">
                     <label for="out">Out</label>
                     <input type="number" name="out" id="out" class="form-control" placeholder="Out" />
@@ -76,6 +239,8 @@
 
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
           </form>
+
+          <!-- dynamically input fields -->
           <script>
             //Dynamically generate input fields
             $(document).ready(function () {
@@ -92,24 +257,150 @@
                   $(wrapper).append(
                     `<div class="form-row">
                   <div class="form-group col-md-6">
-                    <input type="text" class="form-control" id="medicine${x}" name="medicine" placeholder="Medicine" />
+                    <select class="form-select" id="medicine${x}" name="medicine${x}" onload=" $('#medicine').editableSelect();">
+                      <option>Amoxicillin 100mg 10ml drops</option>
+                      <option>Amoxicillin 125mg/5ml.susp.60ml.</option>
+                      <option>Amoxicillin 250mg. Cap. 100's</option>
+                      <option>Amoxicillin 250mg/5ml.susp.60 ml.</option>
+                      <option>Amoxicillin 500mg. Cap. 100's</option>
+                      <option>Calcium Ascorbate 500mg cap100's</option>
+                      <option>Captopril 25mg tab. 100's</option>
+                      <option>Cefalexin 100mg.10ml.drops</option>
+                      <option>Cefalexin 125mg,susp.60ml.</option>
+                      <option>Cefalexin cap.500mg.100's</option>
+                      <option>Ceterizine 5mg / 5ml syrup 60ml</option>
+                      <option>Ceterizine10mg. Tab 100's</option>
+                      <option>Chlorpeniramine 4mg tab. 100's</option>
+                      <option>Chlorpeniramine maleate 2mg / 5ml 60ml syrup</option>
+                      <option>Cimetidine 200 mg 100's</option>
+                      <option>Ciprofloxacin 500mg tab.100's</option>
+                      <option>Cloxacillin 125mg susp.60ml</option>
+                      <option>Cloxacillin 250mg 60 ml susp.</option>
+                      <option>Cloxacillin cap.500mg.,100s</option>
+                      <option>Cotrimoxazole 200mg/40mg susp.60ml</option>
+                      <option>Cotrimoxazole 400mg/80mg. Cap.100's</option>
+                      <option>Doxycycline 100mg cap.100's</option>
+                      <option>Erytrhromycin 500mg cap.100's -</option>
+                      <option>Erytrhromycin 500mg cap.100's</option>
+                      <option>Felodipine 5mg tab.100's</option>
+                      <option>Ferrous Sulfate + Folic Acid 200mg /400mg tab 100's</option>
+                      <option>Glibenclamide 5mg tab.100's</option>
+                      <option>Glibenclamide 5mg tab.100's -</option>
+                      <option>Ibuprofen 200mg tab. 100's</option>
+                      <option>Lagundi 300mg tab.100's</option>
+                      <option>Lagundi 300mg tab.100's -</option>
+                      <option>Lagundi 300mg, 60ml syrup</option>
+                      <option>Mefenamic 500mg cap.100s</option>
+                      <option>Mefanamic 50mg/5ml 60ml susp.</option>
+                      <option>Metoprolol 50mg tab. 100's</option>
+                      <option>Paracetamol 100mg 10ml. Drops</option>
+                      <option>Paracetamol 250mg 60ml syrup</option>
+                      <option>Paracetamol 500mg. Tab. 100's.</option>
+                      <option>Paracetamol 120mg/5ml.sy..60ml.</option>
+                      <option>Salbutamol 2mg/5ml syrup 60ml</option>
+                      <option>Salbutamol nebule solution 1mg /ml 30's</option>
+                      <option>Sambong Forte 250mg tab.100's</option>
+                      <option>Simvastatin 20mg. Tab. 100's</option>
+                      <option>Sodium Ascorbate 250mg/5ml syrup 120ml</option>
+                      <option>Sodium Ascorbate 500mg Cap.100's</option>
+                      <option>Sodium Ascorbate Drops. 100mg/ml 30ml</option>
+                      <option>Trimetazidine 35mg tab.30's</option>
+                      <option>Vit.+ Mineral w/ Ginseng Cap. 100's</option>
+                      <option>Vit. B Complex with Iron Cap. 100's</option>
+                      <option>Vit. B Complex (B1B6B12) Tab. 100's</option>
+                      <option>Vitamins + Lysine, CGF & Taurine sy. 60ml</option>
+                      <option>Tetanus Toxoid ( Tetox )</option>
+                      <option>Methyldopa 250mg tab. 100's</option>
+                      <option>Rifampicin 450mg cap. 100's</option>
+                      <option>Isoniazid 300mg tab.100's</option>
+                      <option>LOSARTAN 50mg Tab. 100's</option>
+                      <option>Isoniazid Syrup 100mg / 5ml, 120ml</option>
+                      <option>Rifampicin 200mg / 5ml Susp. 120ml</option>
+                      <option>DMPA</option>
+                      <option>TRUST PILLS (ETHINYL ESTRADIOL LEVONOGESTREL FERROUS FUMARATE)</option>
+                      <option>POP Progestine Only Pill</option>
+                      <option>Metformin 500 mg Tab. 100's</option>
+                      <option>Omeprazole 20mg. Cap 100's</option>
+                      <option>Salbutamol 2mg Tab. 100's</option>
+                      <option>Amlodipine 5mg Tab. 100's</option>
+                      <option>Clonidine HCL. 75mcg. Tab. 100's - Clodin</option>
+                      <option>Amlodipine 5mg tab. 100's -</option>
+                      <option>Amoxicillin 500mg cap 100's -</option>
+                      <option>Calcuim Ascorbate 500mg cap. 100's -</option>
+                      <option>Cefalexin 500mg cap. 100's -</option>
+                      <option>Cefuroxime 500mg cap. 10's</option>
+                      <option>Levofloxacin 500mg tab. 30's</option>
+                      <option>Losartan 50mg tab. 100's -</option>
+                      <option>Mefanamic acid 500 mg cap. 100's</option>
+                      <option>Metoprolol 50mg tab. 100's -</option>
+                      <option>Simvastatin 20mg tab. 100's -</option>
+                      <option>Implanon (Estenogestrel Implanon 68 mg Implant )</option>
+                      <option>Levofloxacin 500mg tab. 30's -</option>
+                      <option>ORS x25's.</option>
+                      <option>Salbutamol 2mg/5ml syrup 60ml -</option>
+                      <option>Sodium Ascorbate 500mg Cap.100's -</option>
+                      <option>Trimetazidine 35mg tab.30's -</option>
+                      <option>LOSARTAN 50mg Tab. 100's -</option>
+                      <option>Metformin 500 mg Tab. 100's -</option>
+                      <option>Aspirin 80mg tab. 100's -</option>
+                      <option>Montelukast 10mg tab. 100's -</option>
+                      <option>Prednisone 10mg tab. 100's (Vonwelt )</option>
+                      <option>Clonidine HCL. 75mcg. Tab. 100's - ( Catamed ) -</option>
+                      <option>Isosorbide Dinatrate 10 mg tab. 100's</option>
+                      <option>Azithromycin 500mg tab. 3's</option>
+                      <option>Cefuroxime 500mg cap. 10's -</option>
+                      <option>Mefenamic 500mg cap.100s -</option>
+                      <option>Sodium Ascorbate 500mg cap. 100's ( ALKA C )</option>
+                      <option>Ciprofloxacin 500mg tab.100's -</option>
+                      <option>Levofloxacin 500mg tab. 100's</option>
+                      <option>Clonidine HCL 75mcg tab. 100's -</option>
+                      <option>Prednisone 10mg tab. 100's</option>
+                      <option>Aspirin 80mg tab. 100's</option>
+                      <option>Montelukast 10mg tab. 100's</option>
+                      <option>Cefuroxime 500mg cap. 10's</option>
+                      <option>Azithromycin 500mg tab. 6's</option>
+                      <option>Losartan 500mg tab 100's -</option>
+                      <option>Lagundi 300mg tab. 100's ( ofplemed )</option>
+                      <option>Lagundi 300 60ml syrup -</option>
+                      <option>Ceterizine 10mg tab. 100's ( Medrizine )</option>
+                      <option>Glibenclamide 5mg tab.100's ( Glimide )</option>
+                      <option>Paracetamol 125mg/5ml syrup 60ml (Alagesic )</option>
+                      <option>Paracetamol 500mg tab. 100's ( Philpara )</option>
+                      <option>Captopril 25mg tab. 100's ( Captobes )</option>
+                      <option>Felodipine 5mg tab.100's ( Felostal )</option>
+                      <option>Amlodipine 5mg Tab. 100's (Norvatrol )</option>
+                      <option>Sodium Ascorbate w/ zinc. 109.68mg/6.5mg 5ml,120ml ( Kiddy-Plus C )</option>
+                      <option>Trimetazidine 35mg tab.30's ( Trimezar )</option>
+                      <option>Vit.+ Lysine, CGF & Taurine syrup 60ml ( Calorevit syrup. )</option>
+                      <option>Cefalexin 100mg/ ml powder susp. (diacef )</option>
+                      <option>Azithromycin 500mg tab. 6's (Azo )</option>
+                    </select>                  
                   </div>
                   
                   <div class="form-group col-md-2">
-                    <input type="number" name="receive" id="receive${x}" class="form-control" placeholder="Receive" />
+                    <input type="number" name="receive${x}" id="receive${x}" class="form-control" placeholder="Receive" />
                   </div>
                   <div class="form-group col-md-2">
-                    <input type="number" name="out" id="out${x}" class="form-control" placeholder="Out" />
+                    <input type="number" name="out${x}" id="out${x}" class="form-control" placeholder="Out" />
                   </div>
                   <div class="form-group col-md-2 delBtn">
                     <button type="submit" class="btn btn-danger delete">Delete</button>
                   </div>
+                 
+                  
 
                 </div>`
                   ); //add input box
+
+                  $('#medicine'+x).editableSelect();
+                  document.getElementById("medicine"+x).focus();
+                 
+                 
                 } else {
                   alert("You Reached the limits");
                 }
+
+              
               });
 
               //delete medicine field
@@ -121,8 +412,19 @@
               });
             });
           </script>
+          
+        
+          
+
         </div>
       </div>
     </div>
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="//rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.js"></script>    
+    <script>
+      window.onload = function() {
+      $('#medicine').editableSelect();
+      };      
+    </script>
   </body>
 </html>
